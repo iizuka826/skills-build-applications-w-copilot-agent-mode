@@ -5,7 +5,7 @@ const router = Router();
 
 router.get('/', async (_req, res) => {
   const leaderboard = await Leaderboard.find({}).lean();
-  res.json({ message: 'Leaderboard route ready', leaderboard });
+  res.json(leaderboard);
 });
 
 export default router;

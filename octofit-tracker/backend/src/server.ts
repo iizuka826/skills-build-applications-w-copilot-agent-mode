@@ -30,12 +30,12 @@ mongoose
   .connect(mongoUri)
   .then(() => {
     console.log('Connected to MongoDB');
-    app.listen(port, () => {
-      console.log(`Backend listening on port ${port}`);
-      console.log(`API base URL: ${baseUrl}`);
-    });
   })
   .catch((error) => {
     console.error('MongoDB connection error:', error);
-    process.exit(1);
   });
+
+app.listen(port, () => {
+  console.log(`Backend listening on port ${port}`);
+  console.log(`API base URL: ${baseUrl}`);
+});
